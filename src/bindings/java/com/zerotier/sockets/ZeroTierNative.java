@@ -41,20 +41,20 @@ public class ZeroTierNative {
      * before node's constructor returns.
      *
      */
-    public static int ZTS_EVENT_NODE_UP = 200;
+    public static final int ZTS_EVENT_NODE_UP = 200;
 
     /**
      * Node is online -- at least one upstream node appears reachable
      *
      */
-    public static int ZTS_EVENT_NODE_ONLINE = 201;
+    public static final int ZTS_EVENT_NODE_ONLINE = 201;
 
     /**
      * Node is offline -- network does not seem to be reachable by any available
      * strategy
      *
      */
-    public static int ZTS_EVENT_NODE_OFFLINE = 202;
+    public static final int ZTS_EVENT_NODE_OFFLINE = 202;
 
     /**
      * Node is shutting down
@@ -64,7 +64,7 @@ public class ZeroTierNative {
      * handler may appear more idiomatic.
      *
      */
-    public static int ZTS_EVENT_NODE_DOWN = 203;
+    public static final int ZTS_EVENT_NODE_DOWN = 203;
 
     /**
      * A fatal error has occurred. One possible reason is:
@@ -98,264 +98,264 @@ public class ZeroTierNative {
      *
      * Meta-data: none
      */
-    public static int ZTS_EVENT_NODE_FATAL_ERROR = 204;
+    public static final int ZTS_EVENT_NODE_FATAL_ERROR = 204;
 
     /** Network ID does not correspond to a known network */
-    public static int ZTS_EVENT_NETWORK_NOT_FOUND = 210;
+    public static final int ZTS_EVENT_NETWORK_NOT_FOUND = 210;
     /** The version of ZeroTier inside libzt is too old */
-    public static int ZTS_EVENT_NETWORK_CLIENT_TOO_OLD = 211;
+    public static final int ZTS_EVENT_NETWORK_CLIENT_TOO_OLD = 211;
     /** The configuration for a network has been requested (no action needed) */
-    public static int ZTS_EVENT_NETWORK_REQ_CONFIG = 212;
+    public static final int ZTS_EVENT_NETWORK_REQ_CONFIG = 212;
     /** The node joined the network successfully (no action needed) */
-    public static int ZTS_EVENT_NETWORK_OK = 213;
+    public static final int ZTS_EVENT_NETWORK_OK = 213;
     /** The node is not allowed to join the network (you must authorize node) */
-    public static int ZTS_EVENT_NETWORK_ACCESS_DENIED = 214;
+    public static final int ZTS_EVENT_NETWORK_ACCESS_DENIED = 214;
     /** The node has received an IPv4 address from the network controller */
-    public static int ZTS_EVENT_NETWORK_READY_IP4 = 215;
+    public static final int ZTS_EVENT_NETWORK_READY_IP4 = 215;
     /** The node has received an IPv6 address from the network controller */
-    public static int ZTS_EVENT_NETWORK_READY_IP6 = 216;
+    public static final int ZTS_EVENT_NETWORK_READY_IP6 = 216;
     /** Deprecated */
-    public static int ZTS_EVENT_NETWORK_READY_IP4_IP6 = 217;
+    public static final int ZTS_EVENT_NETWORK_READY_IP4_IP6 = 217;
     /** Network controller is unreachable */
-    public static int ZTS_EVENT_NETWORK_DOWN = 218;
+    public static final int ZTS_EVENT_NETWORK_DOWN = 218;
     /** Network change received from controller */
-    public static int ZTS_EVENT_NETWORK_UPDATE = 219;
+    public static final int ZTS_EVENT_NETWORK_UPDATE = 219;
 
     /** TCP/IP stack (lwIP) is up (for debug purposes) */
-    public static int ZTS_EVENT_STACK_UP = 220;
+    public static final int ZTS_EVENT_STACK_UP = 220;
     /** TCP/IP stack (lwIP) id down (for debug purposes) */
-    public static int ZTS_EVENT_STACK_DOWN = 221;
+    public static final int ZTS_EVENT_STACK_DOWN = 221;
 
     /** lwIP netif up (for debug purposes) */
-    public static int ZTS_EVENT_NETIF_UP = 230;
+    public static final int ZTS_EVENT_NETIF_UP = 230;
     /** lwIP netif down (for debug purposes) */
-    public static int ZTS_EVENT_NETIF_DOWN = 231;
+    public static final int ZTS_EVENT_NETIF_DOWN = 231;
     /** lwIP netif removed (for debug purposes) */
-    public static int ZTS_EVENT_NETIF_REMOVED = 232;
+    public static final int ZTS_EVENT_NETIF_REMOVED = 232;
     /** lwIP netif link up (for debug purposes) */
-    public static int ZTS_EVENT_NETIF_LINK_UP = 233;
+    public static final int ZTS_EVENT_NETIF_LINK_UP = 233;
     /** lwIP netif link down (for debug purposes) */
-    public static int ZTS_EVENT_NETIF_LINK_DOWN = 234;
+    public static final int ZTS_EVENT_NETIF_LINK_DOWN = 234;
 
     /** A direct P2P path to peer is known */
-    public static int ZTS_EVENT_PEER_DIRECT = 240;
+    public static final int ZTS_EVENT_PEER_DIRECT = 240;
     /** A direct P2P path to peer is NOT known. Traffic is now relayed  */
-    public static int ZTS_EVENT_PEER_RELAY = 241;
+    public static final int ZTS_EVENT_PEER_RELAY = 241;
     /** A peer is unreachable. Check NAT/Firewall settings */
-    public static int ZTS_EVENT_PEER_UNREACHABLE = 242;
+    public static final int ZTS_EVENT_PEER_UNREACHABLE = 242;
     /** A new path to a peer was discovered */
-    public static int ZTS_EVENT_PEER_PATH_DISCOVERED = 243;
+    public static final int ZTS_EVENT_PEER_PATH_DISCOVERED = 243;
     /** A known path to a peer is now considered dead */
-    public static int ZTS_EVENT_PEER_PATH_DEAD = 244;
+    public static final int ZTS_EVENT_PEER_PATH_DEAD = 244;
 
     /** A new managed network route was added */
-    public static int ZTS_EVENT_ROUTE_ADDED = 250;
+    public static final int ZTS_EVENT_ROUTE_ADDED = 250;
     /** A managed network route was removed */
-    public static int ZTS_EVENT_ROUTE_REMOVED = 251;
+    public static final int ZTS_EVENT_ROUTE_REMOVED = 251;
 
     /** A new managed IPv4 address was assigned to this peer */
-    public static int ZTS_EVENT_ADDR_ADDED_IP4 = 260;
+    public static final int ZTS_EVENT_ADDR_ADDED_IP4 = 260;
     /** A managed IPv4 address assignment was removed from this peer  */
-    public static int ZTS_EVENT_ADDR_REMOVED_IP4 = 261;
+    public static final int ZTS_EVENT_ADDR_REMOVED_IP4 = 261;
     /** A new managed IPv4 address was assigned to this peer  */
-    public static int ZTS_EVENT_ADDR_ADDED_IP6 = 262;
+    public static final int ZTS_EVENT_ADDR_ADDED_IP6 = 262;
     /** A managed IPv6 address assignment was removed from this peer  */
-    public static int ZTS_EVENT_ADDR_REMOVED_IP6 = 263;
+    public static final int ZTS_EVENT_ADDR_REMOVED_IP6 = 263;
 
     /** The node's secret key (identity) */
-    public static int ZTS_EVENT_STORE_IDENTITY_SECRET = 270;
+    public static final int ZTS_EVENT_STORE_IDENTITY_SECRET = 270;
     /** The node's public key (identity) */
-    public static int ZTS_EVENT_STORE_IDENTITY_PUBLIC = 271;
+    public static final int ZTS_EVENT_STORE_IDENTITY_PUBLIC = 271;
     /** The node has received an updated planet config */
-    public static int ZTS_EVENT_STORE_PLANET = 272;
+    public static final int ZTS_EVENT_STORE_PLANET = 272;
     /** New reachability hints and peer configuration */
-    public static int ZTS_EVENT_STORE_PEER = 273;
+    public static final int ZTS_EVENT_STORE_PEER = 273;
     /** New network config */
-    public static int ZTS_EVENT_STORE_NETWORK = 274;
+    public static final int ZTS_EVENT_STORE_NETWORK = 274;
 
     // Socket protocol types
     /** Stream socket */
-    public static int ZTS_SOCK_STREAM = 0x00000001;
+    public static final int ZTS_SOCK_STREAM = 0x00000001;
     /** Datagram socket */
-    public static int ZTS_SOCK_DGRAM = 0x00000002;
-    public static int ZTS_SOCK_RAW = 0x00000003;
+    public static final int ZTS_SOCK_DGRAM = 0x00000002;
+    public static final int ZTS_SOCK_RAW = 0x00000003;
     // Socket family types
     /** IPv4 address family */
-    public static int ZTS_AF_INET = 0x00000002;
+    public static final int ZTS_AF_INET = 0x00000002;
     // another test comment
     /** IPv6 address family */
-    public static int ZTS_AF_INET6 = 0x0000000a;
+    public static final int ZTS_AF_INET6 = 0x0000000a;
     /* yet one more */
-    public static int ZTS_PF_INET = ZTS_AF_INET;
-    public static int ZTS_PF_INET6 = ZTS_AF_INET6;
+    public static final int ZTS_PF_INET = ZTS_AF_INET;
+    public static final int ZTS_PF_INET6 = ZTS_AF_INET6;
     // Used as level numbers for setsockopt() and getsockopt()
-    public static int ZTS_IPPROTO_IP = 0x00000000;
-    public static int ZTS_IPPROTO_ICMP = 0x00000001;
-    public static int ZTS_IPPROTO_TCP = 0x00000006;
-    public static int ZTS_IPPROTO_UDP = 0x00000011;
-    public static int ZTS_IPPROTO_IPV6 = 0x00000029;
-    public static int ZTS_IPPROTO_ICMPV6 = 0x0000003a;
-    public static int ZTS_IPPROTO_UDPLITE = 0x00000088;
-    public static int ZTS_IPPROTO_RAW = 0x000000ff;
+    public static final int ZTS_IPPROTO_IP = 0x00000000;
+    public static final int ZTS_IPPROTO_ICMP = 0x00000001;
+    public static final int ZTS_IPPROTO_TCP = 0x00000006;
+    public static final int ZTS_IPPROTO_UDP = 0x00000011;
+    public static final int ZTS_IPPROTO_IPV6 = 0x00000029;
+    public static final int ZTS_IPPROTO_ICMPV6 = 0x0000003a;
+    public static final int ZTS_IPPROTO_UDPLITE = 0x00000088;
+    public static final int ZTS_IPPROTO_RAW = 0x000000ff;
     // send() and recv() flags
-    public static int ZTS_MSG_PEEK = 0x00000001;
-    public static int ZTS_MSG_WAITALL = 0x00000002;
-    public static int ZTS_MSG_OOB = 0x00000004;
-    public static int ZTS_MSG_DONTWAIT = 0x00000008;
-    public static int ZTS_MSG_MORE = 0x00000010;
+    public static final int ZTS_MSG_PEEK = 0x00000001;
+    public static final int ZTS_MSG_WAITALL = 0x00000002;
+    public static final int ZTS_MSG_OOB = 0x00000004;
+    public static final int ZTS_MSG_DONTWAIT = 0x00000008;
+    public static final int ZTS_MSG_MORE = 0x00000010;
     // fnctl() commands
-    public static int ZTS_F_GETFL = 0x00000003;
-    public static int ZTS_F_SETFL = 0x00000004;
+    public static final int ZTS_F_GETFL = 0x00000003;
+    public static final int ZTS_F_SETFL = 0x00000004;
     // fnctl() flags
-    public static int ZTS_O_NONBLOCK = 0x00000001;
-    public static int ZTS_O_NDELAY = 0x00000001;
+    public static final int ZTS_O_NONBLOCK = 0x00000001;
+    public static final int ZTS_O_NDELAY = 0x00000001;
     // Shutdown commands
-    public static int ZTS_SHUT_RD = 0x00000000;
-    public static int ZTS_SHUT_WR = 0x00000001;
-    public static int ZTS_SHUT_RDWR = 0x00000002;
+    public static final int ZTS_SHUT_RD = 0x00000000;
+    public static final int ZTS_SHUT_WR = 0x00000001;
+    public static final int ZTS_SHUT_RDWR = 0x00000002;
     // ioctl() commands
-    public static int ZTS_FIONREAD = 0x4008667F;
-    public static int ZTS_FIONBIO = 0x8008667E;
+    public static final int ZTS_FIONREAD = 0x4008667F;
+    public static final int ZTS_FIONBIO = 0x8008667E;
     // Socket level option number
-    public static int ZTS_SOL_SOCKET = 0x00000FFF;
+    public static final int ZTS_SOL_SOCKET = 0x00000FFF;
     // Socket options
-    public static int ZTS_SO_REUSEADDR = 0x00000004;
-    public static int ZTS_SO_KEEPALIVE = 0x00000008;
-    public static int ZTS_SO_BROADCAST = 0x00000020;
+    public static final int ZTS_SO_REUSEADDR = 0x00000004;
+    public static final int ZTS_SO_KEEPALIVE = 0x00000008;
+    public static final int ZTS_SO_BROADCAST = 0x00000020;
     // Socket options
-    public static int ZTS_SO_DEBUG = 0x00000001;   // NOT YET SUPPORTED
-    public static int ZTS_SO_ACCEPTCONN = 0x00000002;
-    public static int ZTS_SO_DONTROUTE = 0x00000010;     // NOT YET SUPPORTED
-    public static int ZTS_SO_USELOOPBACK = 0x00000040;   // NOT YET SUPPORTED
-    public static int ZTS_SO_LINGER = 0x00000080;
-    public static int ZTS_SO_DONTLINGER = (~ZTS_SO_LINGER);
-    public static int ZTS_SO_OOBINLINE = 0x00000100;   // NOT YET SUPPORTED
-    public static int ZTS_SO_REUSEPORT = 0x00000200;   // NOT YET SUPPORTED
-    public static int ZTS_SO_SNDBUF = 0x00001001;      // NOT YET SUPPORTED
-    public static int ZTS_SO_RCVBUF = 0x00001002;
-    public static int ZTS_SO_SNDLOWAT = 0x00001003;   // NOT YET SUPPORTED
-    public static int ZTS_SO_RCVLOWAT = 0x00001004;   // NOT YET SUPPORTED
-    public static int ZTS_SO_SNDTIMEO = 0x00001005;
-    public static int ZTS_SO_RCVTIMEO = 0x00001006;
-    public static int ZTS_SO_ERROR = 0x00001007;
-    public static int ZTS_SO_TYPE = 0x00001008;
-    public static int ZTS_SO_CONTIMEO = 0x00001009;   // NOT YET SUPPORTED
-    public static int ZTS_SO_NO_CHECK = 0x0000100a;
+    public static final int ZTS_SO_DEBUG = 0x00000001;   // NOT YET SUPPORTED
+    public static final int ZTS_SO_ACCEPTCONN = 0x00000002;
+    public static final int ZTS_SO_DONTROUTE = 0x00000010;     // NOT YET SUPPORTED
+    public static final int ZTS_SO_USELOOPBACK = 0x00000040;   // NOT YET SUPPORTED
+    public static final int ZTS_SO_LINGER = 0x00000080;
+    public static final int ZTS_SO_DONTLINGER = (~ZTS_SO_LINGER);
+    public static final int ZTS_SO_OOBINLINE = 0x00000100;   // NOT YET SUPPORTED
+    public static final int ZTS_SO_REUSEPORT = 0x00000200;   // NOT YET SUPPORTED
+    public static final int ZTS_SO_SNDBUF = 0x00001001;      // NOT YET SUPPORTED
+    public static final int ZTS_SO_RCVBUF = 0x00001002;
+    public static final int ZTS_SO_SNDLOWAT = 0x00001003;   // NOT YET SUPPORTED
+    public static final int ZTS_SO_RCVLOWAT = 0x00001004;   // NOT YET SUPPORTED
+    public static final int ZTS_SO_SNDTIMEO = 0x00001005;
+    public static final int ZTS_SO_RCVTIMEO = 0x00001006;
+    public static final int ZTS_SO_ERROR = 0x00001007;
+    public static final int ZTS_SO_TYPE = 0x00001008;
+    public static final int ZTS_SO_CONTIMEO = 0x00001009;   // NOT YET SUPPORTED
+    public static final int ZTS_SO_NO_CHECK = 0x0000100a;
     // IPPROTO_IP options
-    public static int ZTS_IP_TOS = 0x00000001;
-    public static int ZTS_IP_TTL = 0x00000002;
+    public static final int ZTS_IP_TOS = 0x00000001;
+    public static final int ZTS_IP_TTL = 0x00000002;
     // IPPROTO_TCP options
-    public static int ZTS_TCP_NODELAY = 0x00000001;
-    public static int ZTS_TCP_KEEPALIVE = 0x00000002;
-    public static int ZTS_TCP_KEEPIDLE = 0x00000003;
-    public static int ZTS_TCP_KEEPINTVL = 0x00000004;
-    public static int ZTS_TCP_KEEPCNT = 0x00000005;
+    public static final int ZTS_TCP_NODELAY = 0x00000001;
+    public static final int ZTS_TCP_KEEPALIVE = 0x00000002;
+    public static final int ZTS_TCP_KEEPIDLE = 0x00000003;
+    public static final int ZTS_TCP_KEEPINTVL = 0x00000004;
+    public static final int ZTS_TCP_KEEPCNT = 0x00000005;
 
     //----------------------------------------------------------------------------//
     // Error codes                                                                //
     //----------------------------------------------------------------------------//
 
     /** (0) No error */
-    public static int ZTS_ERR_OK = 0;
+    public static final int ZTS_ERR_OK = 0;
     /** (-1) Socket error, see zts_errno */
-    public static int ZTS_ERR_SOCKET = -1;
+    public static final int ZTS_ERR_SOCKET = -1;
     /** (-2) You probably did something at the wrong time */
-    public static int ZTS_ERR_SERVICE = -2;
+    public static final int ZTS_ERR_SERVICE = -2;
     /** (-3) Invalid argument */
-    public static int ZTS_ERR_ARG = -3;
+    public static final int ZTS_ERR_ARG = -3;
     /** (-4) No result (not necessarily an error) */
-    public static int ZTS_ERR_RESULT = -4;
+    public static final int ZTS_ERR_RESULT = -4;
     /** (-5) Consider filing a bug report */
-    public static int ZTS_ERR_GENERAL = -5;
+    public static final int ZTS_ERR_GENERAL = -5;
 
     //----------------------------------------------------------------------------//
     // zts_errno Error codes                                                      //
     //----------------------------------------------------------------------------//
 
     /** Operation not permitted (`zts_errno` value) */
-    public static int ZTS_EPERM = 1;
+    public static final int ZTS_EPERM = 1;
     /** No such file or directory */
-    public static int ZTS_ENOENT = 2;
+    public static final int ZTS_ENOENT = 2;
     /** No such process */
-    public static int ZTS_ESRCH = 3;
+    public static final int ZTS_ESRCH = 3;
     /** Interrupted system call */
-    public static int ZTS_EINTR = 4;
+    public static final int ZTS_EINTR = 4;
     /** I/O error */
-    public static int ZTS_EIO = 5;
+    public static final int ZTS_EIO = 5;
     /** No such device or address */
-    public static int ZTS_ENXIO = 6;
+    public static final int ZTS_ENXIO = 6;
     /** Bad file number */
-    public static int ZTS_EBADF = 9;
+    public static final int ZTS_EBADF = 9;
     /** Try again */
-    public static int ZTS_EAGAIN = 11;
+    public static final int ZTS_EAGAIN = 11;
     /** Operation would block */
-    public static int ZTS_EWOULDBLOCK = 11;
+    public static final int ZTS_EWOULDBLOCK = 11;
     /** Out of memory */
-    public static int ZTS_ENOMEM = 12;
+    public static final int ZTS_ENOMEM = 12;
     /** Permission denied */
-    public static int ZTS_EACCES = 13;
+    public static final int ZTS_EACCES = 13;
     /** Bad address */
-    public static int ZTS_EFAULT = 14;
+    public static final int ZTS_EFAULT = 14;
     /** Device or resource busy */
-    public static int ZTS_EBUSY = 16;
+    public static final int ZTS_EBUSY = 16;
     /** File exists */
-    public static int ZTS_EEXIST = 17;
+    public static final int ZTS_EEXIST = 17;
     /** No such device */
-    public static int ZTS_ENODEV = 19;
+    public static final int ZTS_ENODEV = 19;
     /** Invalid argument */
-    public static int ZTS_EINVAL = 22;
+    public static final int ZTS_EINVAL = 22;
     /** File table overflow */
-    public static int ZTS_ENFILE = 23;
+    public static final int ZTS_ENFILE = 23;
     /** Too many open files */
-    public static int ZTS_EMFILE = 24;
+    public static final int ZTS_EMFILE = 24;
     /** Function not implemented */
-    public static int ZTS_ENOSYS = 38;
+    public static final int ZTS_ENOSYS = 38;
     /** Socket operation on non-socket */
-    public static int ZTS_ENOTSOCK = 88;
+    public static final int ZTS_ENOTSOCK = 88;
     /** Destination address required */
-    public static int ZTS_EDESTADDRREQ = 89;
+    public static final int ZTS_EDESTADDRREQ = 89;
     /** Message too long */
-    public static int ZTS_EMSGSIZE = 90;
+    public static final int ZTS_EMSGSIZE = 90;
     /** Protocol wrong type for socket */
-    public static int ZTS_EPROTOTYPE = 91;
+    public static final int ZTS_EPROTOTYPE = 91;
     /** Protocol not available */
-    public static int ZTS_ENOPROTOOPT = 92;
+    public static final int ZTS_ENOPROTOOPT = 92;
     /** Protocol not supported */
-    public static int ZTS_EPROTONOSUPPORT = 93;
+    public static final int ZTS_EPROTONOSUPPORT = 93;
     /** Socket type not supported */
-    public static int ZTS_ESOCKTNOSUPPORT = 94;
+    public static final int ZTS_ESOCKTNOSUPPORT = 94;
     /** Operation not supported on transport endpoint */
-    public static int ZTS_EOPNOTSUPP = 95;
+    public static final int ZTS_EOPNOTSUPP = 95;
     /** Protocol family not supported */
-    public static int ZTS_EPFNOSUPPORT = 96;
+    public static final int ZTS_EPFNOSUPPORT = 96;
     /** Address family not supported by protocol */
-    public static int ZTS_EAFNOSUPPORT = 97;
+    public static final int ZTS_EAFNOSUPPORT = 97;
     /** Address already in use */
-    public static int ZTS_EADDRINUSE = 98;
+    public static final int ZTS_EADDRINUSE = 98;
     /** Cannot assign requested address */
-    public static int ZTS_EADDRNOTAVAIL = 99;
+    public static final int ZTS_EADDRNOTAVAIL = 99;
     /** Network is down */
-    public static int ZTS_ENETDOWN = 100;
+    public static final int ZTS_ENETDOWN = 100;
     /** Network is unreachable */
-    public static int ZTS_ENETUNREACH = 101;
+    public static final int ZTS_ENETUNREACH = 101;
     /** Software caused connection abort */
-    public static int ZTS_ECONNABORTED = 103;
+    public static final int ZTS_ECONNABORTED = 103;
     /** Connection reset by peer */
-    public static int ZTS_ECONNRESET = 104;
+    public static final int ZTS_ECONNRESET = 104;
     /** No buffer space available */
-    public static int ZTS_ENOBUFS = 105;
+    public static final int ZTS_ENOBUFS = 105;
     /** Transport endpoint is already connected */
-    public static int ZTS_EISCONN = 106;
+    public static final int ZTS_EISCONN = 106;
     /** Transport endpoint is not connected */
-    public static int ZTS_ENOTCONN = 107;
+    public static final int ZTS_ENOTCONN = 107;
     /** Connection timed out */
-    public static int ZTS_ETIMEDOUT = 110;
+    public static final int ZTS_ETIMEDOUT = 110;
     /** No route to host */
-    public static int ZTS_EHOSTUNREACH = 113;
+    public static final int ZTS_EHOSTUNREACH = 113;
     /** Operation already in progress */
-    public static int ZTS_EALREADY = 114;
+    public static final int ZTS_EALREADY = 114;
     /** Operation now in progress */
-    public static int ZTS_EINPROGRESS = 115;
+    public static final int ZTS_EINPROGRESS = 115;
 
     //----------------------------------------------------------------------------//
     // Misc definitions                                                           //
@@ -364,61 +364,61 @@ public class ZeroTierNative {
     /**
      * Length of human-readable MAC address string
      */
-    public static int ZTS_MAC_ADDRSTRLEN = 18;
+    public static final int ZTS_MAC_ADDRSTRLEN = 18;
 
     /**
      * Max length of human-readable IPv4 string
      */
-    public static int ZTS_INET_ADDRSTRLEN = 16;
+    public static final int ZTS_INET_ADDRSTRLEN = 16;
 
     /**
      * Max length of human-readable IPv6 string
      */
-    public static int ZTS_INET6_ADDRSTRLEN = 46;
+    public static final int ZTS_INET6_ADDRSTRLEN = 46;
 
     /**
      * Maximum (and required) length of string buffers used to receive
      * string-format IP addresses from the API. This is set to `ZTS_INET6_ADDRSTRLEN`
      * to handle all cases: `ZTS_AF_INET` and `ZTS_AF_INET6`
      */
-    public static int ZTS_IP_MAX_STR_LEN = 46;
+    public static final int ZTS_IP_MAX_STR_LEN = 46;
 
     /**
      * Required buffer length to safely receive data store items
      */
-    public static int ZTS_STORE_DATA_LEN = 4096;
+    public static final int ZTS_STORE_DATA_LEN = 4096;
 
     /**
      * Maximum length of network short name
      */
-    public static int ZTS_MAX_NETWORK_SHORT_NAME_LENGTH = 127;
+    public static final int ZTS_MAX_NETWORK_SHORT_NAME_LENGTH = 127;
 
     /**
      * Maximum number of pushed routes on a network
      */
-    public static int ZTS_MAX_NETWORK_ROUTES = 32;
+    public static final int ZTS_MAX_NETWORK_ROUTES = 32;
 
     /**
      * Maximum number of statically assigned IP addresses per network endpoint
      * using ZT address management (not DHCP)
      */
-    public static int ZTS_MAX_ASSIGNED_ADDRESSES = 16;
+    public static final int ZTS_MAX_ASSIGNED_ADDRESSES = 16;
 
     /**
      * Maximum number of direct network paths to a given peer
      */
-    public static int ZTS_MAX_PEER_NETWORK_PATHS = 64;
+    public static final int ZTS_MAX_PEER_NETWORK_PATHS = 64;
 
     /**
      * Maximum number of multicast groups a device / network interface can be
      * subscribed to at once
      */
-    public static int ZTS_MAX_MULTICAST_SUBSCRIPTIONS = 1024;
+    public static final int ZTS_MAX_MULTICAST_SUBSCRIPTIONS = 1024;
 
     /**
      * The length of a human-friendly identity key pair string
      */
-    public static int ZTS_ID_STR_BUF_LEN = 384;
+    public static final int ZTS_ID_STR_BUF_LEN = 384;
 
     // public static native int zts_id_new(char* key,  int* key_buf_len);
     // public static native int zts_id_pair_is_valid(/*const*/ char* key,  int len);
