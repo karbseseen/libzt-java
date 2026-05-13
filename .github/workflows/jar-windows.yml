@@ -21,7 +21,7 @@ jobs:
     - name: Patch
       shell: pwsh
       run: |
-        $javaBindingFile = "libzt/src/bindings/java/JavaSockets.cxx"
+        $javaBindingFile = "src/bindings/java/JavaSockets.cxx"
         $javaBindingContent = Get-Content -Path $javaBindingFile -Raw
         $javaBindingPatched = $javaBindingContent.Replace("sin_addr.s_addr", "sin_addr")
         if ($javaBindingPatched -ne $javaBindingContent) {
