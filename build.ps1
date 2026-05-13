@@ -76,6 +76,50 @@ function Build-Library([string]$BuildType, [string]$Arch, [string]$LangBinding)
 	#cp $env:BuildDir\lib\$BuildType\zt.lib $env:OutputDir\lib\libzt.lib
 	cp $env:BuildDir\lib\$BuildType\zt-shared.dll $env:OutputDir\lib\libzt.dll
 	cp $env:BuildDir\lib\$BuildType\zt-shared.pdb $env:OutputDir\lib\libzt.pdb -ErrorAction:'silentlycontinue'
+
+	if ($LangBinding -eq "java") {
+		$PkgVersion = (git describe --tags --abbrev=0).Trim()
+		$JarBuildDir = Join-Path $env:BuildDir "pkg\jar"
+		$JarSourceDir = Join-Path $JarBuildDir "com\zerotier\sockets"
+		$JarOutputDir = Join-Path $env:OutputDir "pkg"
+		$JarName = "libzt-$PkgVersion.jar"
+
+		md $JarSourceDir -Force | Out-Null
+		md $JarOutputDir -Force | Out-Null
+
+		cp src\bindings\java\com\zerotier\sockets\*.java $JarSourceDir -Force
+		cp $env:BuildDir\lib\$BuildType\zt-shared.dll $JarBuildDir\libzt.dll -Force
+
+		pushd -Path $JarBuildDir
+		try {
+			$env:JAVA_TOOL_OPTIONS="-Dfile.encoding=UTF8"
+			$JavaSources = @(Get-ChildItem -Path "com\zerotier\sockets\*.java" | ForEach-Object { $_.FullName })
+			if ($JavaSources.Count -eq 0) {
+				throw "No Java sources found to build a JAR."
+			}
+			& javac -Xlint:all @JavaSources
+			if ($LASTEXITCODE -ne 0) {
+				throw "javac failed."
+			}
+
+			$JarClassEntries = @(Get-ChildItem -Path "com\zerotier\sockets\*.class" | ForEach-Object {
+				$_.FullName.Substring($PWD.Path.Length + 1).Replace('\', '/')
+			})
+			if ($JarClassEntries.Count -eq 0) {
+				throw "No compiled classes found to package into JAR."
+			}
+
+			& jar cf $JarName "libzt.dll" @JarClassEntries
+			if ($LASTEXITCODE -ne 0) {
+				throw "jar failed."
+			}
+		}
+		finally {
+			popd
+		}
+
+		cp "$JarBuildDir\*.jar" $JarOutputDir -Force
+	}
 }
 
 function Build-All
