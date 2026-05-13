@@ -1,0 +1,42 @@
+name: Build windows JAR
+
+on: [workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: windows-2022
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v6
+      with:
+        submodules: true
+
+    - name: Install JDK
+      uses: actions/setup-java@v5
+      with:
+        distribution: temurin
+        java-version: "17"
+
+    - name: Patch
+      shell: pwsh
+      run: |
+        $javaBindingFile = "libzt/src/bindings/java/JavaSockets.cxx"
+        $javaBindingContent = Get-Content -Path $javaBindingFile -Raw
+        $javaBindingPatched = $javaBindingContent.Replace("sin_addr.s_addr", "sin_addr")
+        if ($javaBindingPatched -ne $javaBindingContent) {
+          Set-Content -Path $javaBindingFile -Value $javaBindingPatched
+        }
+
+    - name: Build
+      shell: pwsh
+      working-directory: libzt
+      run: |
+        . .\build.ps1
+        Build-Library -BuildType "Release" -Arch "x64" -LangBinding "java"
+
+    - name: Save
+      uses: actions/upload-artifact@v7
+      with:
+        archive: false
+        path: dist/*-jni-release/pkg/*.jar
