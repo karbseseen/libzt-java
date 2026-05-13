@@ -78,7 +78,13 @@ function Build-Library([string]$BuildType, [string]$Arch, [string]$LangBinding)
 	cp $env:BuildDir\lib\$BuildType\zt-shared.pdb $env:OutputDir\lib\libzt.pdb -ErrorAction:'silentlycontinue'
 
 	if ($LangBinding -eq "java") {
-		$PkgVersion = (git describe --tags --abbrev=0).Trim()
+		$PkgVersion = git describe --tags --abbrev=0 2>$null
+		if (-not [string]::IsNullOrWhiteSpace($PkgVersion)) {
+			$PkgVersion = $PkgVersion.Trim()
+		}
+		else {
+			$PkgVersion = ""
+		}
 		$JarBuildDir = Join-Path $env:BuildDir "pkg\jar"
 		$JarSourceDir = Join-Path $JarBuildDir "com\zerotier\sockets"
 		$JarOutputDir = Join-Path $env:OutputDir "pkg"
