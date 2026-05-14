@@ -448,7 +448,7 @@ public class ZeroTierNative {
     public static native String zts_net_get_mac_str(long net_id);
     public static native int zts_net_get_broadcast(long net_id);
     public static native int zts_net_get_mtu(long net_id);
-    public static native int zts_net_get_name(long net_id, String dst, int len);
+    public static native String zts_net_get_name(long net_id);
     public static native int zts_net_get_status(long net_id);
     public static native int zts_net_get_type(long net_id);
     public static native int zts_route_is_assigned(long net_id, int family);

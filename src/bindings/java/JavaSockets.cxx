@@ -701,14 +701,15 @@ Java_com_zerotier_sockets_ZeroTierNative_zts_1net_1get_1mtu(JNIEnv* jenv, jclass
     return zts_net_get_mtu(net_id);
 }
 
-JNIEXPORT jint JNICALL Java_com_zerotier_sockets_ZeroTierNative_zts_1net_1get_1name(
+JNIEXPORT jstring JNICALL Java_com_zerotier_sockets_ZeroTierNative_zts_1net_1get_1name(
     JNIEnv* jenv,
     jclass clazz,
-    jlong net_id,
-    jstring dst,
-    jint len)
+    jlong net_id)
 {
-    return ZTS_ERR_OK;
+	char name_str[ZTS_MAX_NETWORK_SHORT_NAME_LENGTH + 1];
+	int result = zts_net_get_name(net_id, name_str, ZTS_MAX_NETWORK_SHORT_NAME_LENGTH);
+	if (result != ZTS_ERR_OK) return 0;
+	else return jenv->NewStringUTF(name_str);
 }
 
 JNIEXPORT jint JNICALL
